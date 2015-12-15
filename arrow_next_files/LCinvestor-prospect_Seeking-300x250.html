@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0118)https://s0.2mdn.net/4838635/1444855846340/LCinvestor-prospect_Seeking-300x250/LCinvestor-prospect_Seeking-300x250.html -->
+<html hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script>
+<meta name="ad.size" content="height=300,width=250">
+<link href="LCinvestor-prospect_Seeking-300x250.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script language="javascript">
+var clickTag = "https://www.lendingclub.com/" ; 
+
+///Start Rollover
+//
+function startAd() {
+TweenLite.set("#ad", {visibility:"visible"});
+
+var _time = .35;
+var disc = document.getElementById("disclaimer");
+var btn = document.getElementById("btn");
+
+TweenLite.defaultOverwrite = "false";
+TweenLite.from(header, .7, {x:"-300"});
+TweenLite.from(arrow, 1, {y:"500", x:"-300", delay:2});
+TweenLite.from(copy1, 1, {x:"-300", delay:2.2});
+
+TweenLite.from(sheen, .8, {x:"-300", delay:6});
+TweenLite.from(sheen, .8, {x:"-300", delay:7.5});
+TweenLite.from(sheen, .8, {x:"-300", delay:9});
+
+
+document.getElementById("banner").style.visibility = "visible";
+}
+
+function exitHandler(e) {
+window.open(window.clickTag,'_blank');
+}
+
+function rollOverbtn(){	
+TweenLite.to(cta, .1, {alpha:0, ease:Back.easeOut});
+TweenLite.to(cta_hover, .1, {alpha:1, ease:Back.easeOut});
+}
+
+function rollOutbtn(){	
+TweenLite.to(cta, .1, {alpha:1, ease:Back.easeOut});
+TweenLite.to(cta_hover, .1, {alpha:0, ease:Back.easeOut});
+}
+
+</script>
+<style type="text/css">
+/**
+ * Mediaplex change URLs and rename files. Have to put it here until figure out a workaround
+ */
+
+</style>
+<script src="TweenMax.min.js"></script>
+<title>LCinvestor-prospect_Seeking-300x250</title>
+</head>
+
+<body onload="startAd()">
+<div id="ad" onclick="exitHandler();" onmouseover="rollOverbtn();" onmouseout="rollOutbtn();" style="visibility: visible;">
+  <div id="banner" style="visibility: visible;">
+    <div id="header" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+    <div id="border"></div>
+    <div id="gleam"></div>
+    </div>
+    
+    <div id="cta"><div id="sheen" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div></div>
+    <div id="cta_hover"></div>
+    
+    <div id="copy1" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+    <div id="copy2"></div>
+    <div id="lendingClubLogo"></div>
+    <div id="arrow" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+    <div id="bg"></div>
+    
+    
+  </div>
+
+
+
+</body></html>

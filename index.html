@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<link rel="stylesheet" type="text/css" href="styles.css">
+			
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="styles.css">
 			<title>JS Lightbox</title>
 		</head>
 		<body>
-			<a href="#" class="lightbox-link">Poland</a>
-			<!-- <a href="#" class="lightbox-link">NYCDA logo</a> -->
+			<a href="" src="poland1.jpeg" class="lightbox-link">Poland</a>
+			<a href="" src="poland2.jpeg" class="lightbox-link">NYCDA logo</a>
 				<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -18,7 +19,20 @@
 
 				<div id="outer_lightbox">
 					<div id="inner_lightbox">
-						<img id="this-image" src="poland1.jpeg">
+						
+						<p>
+						<img id="this-image" src=""><br>
+						This is Poland.	
+						</p>
+						
+						<div class = "arrows">
+        					<div class="previous"><a href="">
+          				  	<i class="fa fa-arrow-circle-left">Previous</a></i>
+       					 	</div>
+
+        					<div class="next"><a href=""><i class="fa fa-arrow-circle-right">Next</a></i>
+       						</div>
+						</div>
 					</div>
 				</div>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
